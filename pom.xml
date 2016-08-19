@@ -15,6 +15,9 @@
         <module>springboot/device-detection</module>
         <module>springboot/consuming-rest</module>
         <module>springboot/guides</module>
+        <module>springboot/with-docker</module>
+        <module>java/nio</module>
+        <module>java/io</module>
     </modules>
 
 

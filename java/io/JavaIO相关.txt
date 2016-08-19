@@ -1,0 +1,25 @@
+
+参考：
+http://tutorials.jenkov.com/java-io/index.html
+
+各种流使用示例
+1、InputStream
+
+2、OutputStream
+   FileOutputStream
+
+FileInputStream
+FileOutputStream
+
+PipedInputStream
+PipedOutputStream
+
+ByteArrayInputStream
+ByteArrayOutPutStream
+
+BufferedInputStream
+BufferedOutputStream
+
+ObjectInputStream
+ObjectOutputStream
+

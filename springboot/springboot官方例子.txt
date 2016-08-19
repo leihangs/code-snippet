@@ -1,1 +1,4 @@
 http://spring.io/guides
+
+$ mvn package docker:build
+$ docker push springio/gs-spring-boot-docker
