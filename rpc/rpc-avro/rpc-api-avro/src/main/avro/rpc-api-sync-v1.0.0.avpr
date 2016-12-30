@@ -1,0 +1,114 @@
+{
+  "namespace": "com.code.rpc.api.sync",
+  "protocol": "AccountService",
+  "doc": "ReverseSync Version-1.0.0",
+  "types": [
+    {
+      "doc" : "applicationId:应用ID;originHost:发送方的hostname或者ip地址;requestId:请求Id",
+      "name": "Header",
+      "type": "record",
+      "fields": [
+        {"name": "applicationId" ,"type": "string"},
+        {"name": "originHost"    ,"type": "string"},
+        {"name": "requestId"     ,"type": "string"}
+      ]
+    },
+    {
+       "doc":"查询账户余量信息：请求：属性",
+       "name":"LeftQueryRequest",
+       "type":"record",
+       "fields":[
+         {"name": "oprCode",     "type": "string"},
+         {"name": "phone",       "type": "string"},
+         {"name": "type",        "type": ["null","string"]},
+         {"name": "queryMonth",  "type": ["string"]}]
+    },
+    {
+      "doc":"1、查询账户余量信息:请求:多个卡号支持",
+      "name":"AccountLeftInfoRequest",
+      "type":"record",
+      "fields":[
+         {"name":"header","type": "Header"},
+         {"name":"conditions" ,"type": {"type": "array","items": "LeftQueryRequest"}}]
+    },
+
+    {
+      "doc":"查询余量信息应答-属性-账户信息",
+      "name":"AccountInfo",
+      "type":"record",
+      "fields":[
+        {"name": "accountStatus" ,"type": "string"}]
+    },
+    {
+      "doc":"查询余量信息应答-属性-流量信息",
+      "name":"LeftDataAmount",
+      "type":"record",
+      "fields":[
+        {"name": "type"          ,"type": "string"},
+        {"name": "prodInstId"    ,"type": "string"},
+        {"name": "dataTotal"     ,"type": "string"},
+        {"name": "dataAmount"    ,"type": "string"},
+        {"name": "setAmount"     ,"type": "string"},
+        {"name": "startTime"     ,"type": "string"},
+        {"name": "endTime"       ,"type": "string"}
+      ]
+    },
+    {
+      "doc":"查询余量信息应答-属性",
+      "name":"CardAccountInfo",
+      "type":"record",
+      "fields":[
+        {"name": "phone"         ,"type": "string"},
+        {"name": "accountInfo"   ,"type": "AccountInfo"},
+        {"name": "leftDataAmount","type":{"type":"array", "items":"LeftDataAmount"}}
+      ]
+    },
+    {
+      "doc": "2、用户状态查询请求",
+      "name": "UserStatusRequest",
+      "type": "record",
+      "fields": [
+         {"name": "header"  ,"type": "Header"},
+         {"name": "phone"   ,"type": "string"}
+        ]
+    },
+    {
+      "doc": "用户状态查询响应 ",
+      "name": "UserStatusInfo",
+      "type": "record",
+      "fields": [
+          {"name": "phone"  ,"type": "string"},
+          {"name": "gprs"   ,"type": "string"},
+          {"name": "voice"  ,"type": "string"},
+          {"name": "sms"    ,"type": "string"}
+         ]
+    },
+    {
+     "doc": "响应",
+     "name": "Response",
+     "type": "record",
+     "fields": [
+       {"name": "code"       ,"type": "string"},
+       {"name": "description","type": ["null","string"]},
+       {"name": "data"       ,"type": ["null", {"type":"array", "items":["CardAccountInfo"]}, "string", "UserStatusInfo"]}
+     ]
+    }
+  ],
+
+  "messages": {
+    "queryUserStatusInfo": {
+      "doc": "用户状态查询：同步接口",
+      "request": [
+          {"name": "request","type": "UserStatusRequest"}
+       ],
+      "response": "Response"
+    },
+    "queryLeftFlow": {
+      "doc": "用户余量查询：同步接口",
+      "request": [
+          {"name": "request","type": "AccountLeftInfoRequest"}
+       ],
+      "response": "Response"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:config.properties"/>
+
+    <bean id="parameterMonitorProxy" class="com.code.rpc.avro.account.ParameterMonitorProxy">
+        <property name="next" ref="parameterValidatorProxy"/>
+    </bean>
+
+    <bean id="parameterValidatorProxy" class="com.code.rpc.avro.account.ParameterValidatorProxy">
+        <property name="next" ref="dataDealService"/>
+    </bean>
+
+    <bean id="dataDealService" class="com.code.rpc.avro.account.DataDealService"/>
+
+    <bean id="reverseAsyncServer" class="com.code.rpc.avro.account.AccountServer" init-method="start" destroy-method="stop">
+        <property name="port" value="${server.port}"/>
+        <property name="serviceProxy" ref="parameterMonitorProxy"/>
+    </bean>
+</beans>
