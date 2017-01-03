@@ -6,6 +6,7 @@
     <groupId>cn.code</groupId>
     <artifactId>rest-service</artifactId>
     <version>1.0.0</version>
+    <name>SpringBoot :: rest-service</name>
 
     <!-- Inherit defaults from Spring Boot -->
     <parent>

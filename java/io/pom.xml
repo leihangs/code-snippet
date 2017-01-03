@@ -5,6 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>io</artifactId>
     <version>1.0.0</version>
+    <name>Java :: io</name>
 
     <parent>
         <artifactId>code-snippet</artifactId>

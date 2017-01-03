@@ -6,6 +6,7 @@
     <groupId>cn.code</groupId>
     <artifactId>guides</artifactId>
     <version>1.0.0</version>
+    <name>SpringBoot :: guides</name>
 
     <!-- Inherit defaults from Spring Boot -->
     <parent>

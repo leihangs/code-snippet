@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>rpc-root</module>
+        <module>rpc-parent</module>
         <module>rpc-avro</module>
         <module>rpc-plugin</module>
         <!--测试模块的公共代码临时存放处-->

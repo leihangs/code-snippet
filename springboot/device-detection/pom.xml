@@ -5,6 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>device-detection</artifactId>
     <version>1.0.0</version>
+    <name>SpringBoot :: device-detection</name>
 
     <properties>
         <java.version>1.7</java.version>

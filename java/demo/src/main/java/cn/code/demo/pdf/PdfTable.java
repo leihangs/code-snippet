@@ -1,17 +1,16 @@
 package cn.code.demo.pdf;
 
+import java.awt.*;
+import java.io.FileOutputStream;
+import java.util.HashMap;
+import java.util.Map;
+
 import com.lowagie.text.*;
 import com.lowagie.text.Font;
 import com.lowagie.text.pdf.BaseFont;
 import com.lowagie.text.pdf.PdfPCell;
 import com.lowagie.text.pdf.PdfPTable;
 import com.lowagie.text.pdf.PdfWriter;
-
-import java.awt.*;
-import java.io.FileOutputStream;
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Created by Administrator on 2016/9/1.
  */
