@@ -1,11 +1,14 @@
 package test.user;
 
+import java.util.Date;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.code.doubbo.user.entity.UserBean;
 import com.code.doubbo.user.service.UserService;
 
 /**
@@ -22,12 +25,25 @@ public class UserServiceTest {
 
     @Test
     public void saveUser() {
-//         userclient.saveUser(userBean);
+        UserBean userBean = new UserBean();
+//        userBean.setUserId("uid" + new Date().getTime());
+        userBean.setUserId("uid1");
+        userBean.setUserName("opera");
+        userBean.setPassword("xxxXXXooo");
+        userBean.setEmail("support@163.com");
+        userBean.setPhone("15201234567");
+        userClient.saveUser(userBean);
     }
 
     @Test
     public void updateUser() {
-//         userclient.updateUser(userBean);
+        UserBean userBean = new UserBean();
+        userBean.setUserId("uid1");
+        userBean.setUserName("opera2");
+        userBean.setPassword("xxxXXXooo2");
+        userBean.setEmail("service@163.com");
+        userBean.setPhone("18501234567");
+        userClient.updateUser(userBean);
     }
 
     @Test

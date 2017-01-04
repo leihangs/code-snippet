@@ -19,5 +19,4 @@ public interface UserDao {
 
     UserBean getUser(@Param("userId") String userId);
 
-
 }
