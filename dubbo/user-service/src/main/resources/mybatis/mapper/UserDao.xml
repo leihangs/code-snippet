@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace命名空间,作用就是对sql进行分类化管理,理解sql隔离
+注意:使用mapper代理方法开发,namespace有特殊重要的作用,namespace等于mapper接口地址-->
+<mapper namespace="com.code.dubbo.user.dao.UserDao">
+
+    <!--mapper作用:为DAO接口方法提供sql语句配置-->
+    <sql id="tableFileds">
+        operid,opername,password,email,phone
+    </sql>
+
+    <!--  int saveUser(UserBean userBean);-->
+    <insert id="saveUser" parameterType="UserBean">
+        INSERT INTO
+        sa_user (<include refid="tableFileds"/>)
+        VALUES
+        (#{operId},#{operName},#{password},#{email},#{phone}
+        )
+    </insert>
+
+    <!--   int updateUser(UserBean userBean);-->
+    <update id="updateUser" parameterType="UserBean">
+        UPDATE sa_user
+        SET operid =#{operId},
+        opername =#{operName},
+        password =#{password},
+        email =#{email},
+        phone =#{phone}
+        WHERE operid = #{operId}
+    </update>
+
+    <!--int deleteUser(@Param("operId") String operId)-->
+    <delete id="deleteUser" parameterType="string">
+        DELETE FROM sa_user WHERE  operid = #{operId}
+    </delete>
+
+    <!--UserBean getUser(@Param("operId") String operId)-->
+    <select id="getUser" parameterType="string" resultType="UserBean">
+        SELECT
+        <include refid="tableFileds"/>
+        FROM sa_user WHERE operid = #{operId}
+    </select>
+
+</mapper>

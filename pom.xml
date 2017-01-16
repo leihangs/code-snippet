@@ -25,7 +25,8 @@
         <module>leetcode/base</module>
         <module>kafka/kafka-consumer</module>
         <module>kafka/kafka-producer</module>
-        <module>doubbo</module>
+        <module>dubbo</module>
+        <module>guides/httpclient-guides</module>
     </modules>
 
 </project>
