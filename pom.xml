@@ -27,6 +27,7 @@
         <module>kafka/kafka-producer</module>
         <module>dubbo</module>
         <module>guides/httpclient-guides</module>
+        <module>guides/netty-guides</module>
     </modules>
 
 </project>

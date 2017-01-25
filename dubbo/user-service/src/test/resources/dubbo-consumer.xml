@@ -13,5 +13,5 @@
 	<dubbo:registry protocol="zookeeper" address="127.0.0.1:2181" />
 
 	<!--用户服务对外服务接口 -->
-	<dubbo:reference interface="com.code.dubbo.user.service.UserService" id="userClient" check="false" />
+	<dubbo:reference interface="com.code.dubbo.common.service.UserService" id="userClient" check="false" />
 </beans>

@@ -7,8 +7,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.Assert;
 
-import com.code.dubbo.user.entity.UserBean;
-import com.code.dubbo.user.service.UserService;
+import com.code.dubbo.common.entity.UserBean;
+import com.code.dubbo.common.service.UserService;
 
 /**
  * @author: leihang@live.cn

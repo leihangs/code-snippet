@@ -14,7 +14,7 @@
     <context:annotation-config/>
 
     <!-- 配置要扫描的包 -->
-    <context:component-scan base-package="com.code.dubbo.user"/>
+    <context:component-scan base-package="com.code.dubbo.common"/>
 
     <!-- 读入配置属性文件 -->
     <context:property-placeholder location="classpath:config.properties,classpath:jdbc.properties"/>

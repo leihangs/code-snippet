@@ -12,15 +12,23 @@
         <module>user-service</module>
         <module>user-portal</module>
         <module>user-facade</module>
+        <module>user-common</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.7</java.version>
         <spring.version>4.2.0.RELEASE</spring.version>
+        <servlet.version>2.5</servlet.version>
+        <jsp.version>2.1</jsp.version>
+        <jackson.version>2.6.1</jackson.version>
+
         <druid.version>1.0.24</druid.version>
         <mysql.version>5.1.32</mysql.version>
         <junit.version>4.12</junit.version>
+
+        <slf4j.version>1.7.5</slf4j.version>
+        <logback.version>1.0.13</logback.version>
 
         <aspectj.version>1.6.9</aspectj.version>
         <cglib.version>2.2</cglib.version>
